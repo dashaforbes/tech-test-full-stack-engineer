@@ -1,0 +1,1 @@
+<app-lead *ngFor="let lead of leads" [lead]="lead" [tab]="'invited'" (statusChange)="updateLeadStatus($event)"></app-lead>

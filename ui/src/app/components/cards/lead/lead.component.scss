@@ -1,0 +1,85 @@
+.lead-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.lead-card .row:not(:last-child) {
+    border-bottom: 1px solid grey;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.row.phone-email {
+    justify-content: flex-start;
+}
+
+.row.phone-email div:first-child {
+    margin-right: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.accept-button, .decline-button {
+    color: white;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.accept-button {
+    background-color: orange;
+}
+
+.decline-button {
+    background-color: grey;
+}
+
+.column > div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.column > div > i {
+    margin-right: 5px;
+}
+
+.status-new {
+    display: flex;
+    align-items: center;
+}
+
+.price-invitation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.price-invitation > div {
+    margin-right: 10px;
+}

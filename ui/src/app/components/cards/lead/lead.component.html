@@ -1,0 +1,42 @@
+<mat-card class="lead-card">
+    <!-- Row 1 -->
+    <mat-card-content fxLayout="row" fxLayoutAlign="start center" class="row">
+        <div class="icon" [style.background-color]="'orange'">
+            {{ lead?.contact_name?.charAt(0)?.toUpperCase() }}
+        </div>
+        <div>
+            <div><strong>{{ lead?.contact_name }}</strong></div>
+            <div><small>{{ lead?.updated_at | date:'MMM d, h:mm a' }}</small></div>
+        </div>
+    </mat-card-content>
+    <!-- Row 2 -->
+    <mat-card-content class="row" *ngIf="lead?.status === 'new' || lead?.status === 'accepted'">
+        <div>
+            <i class="fas fa-map-pin"></i> Suburb ID: {{ lead?.suburb_id }}
+        </div>
+        <div>
+            <i class="fas fa-briefcase"></i> Category ID: {{ lead?.category_id }} Job Id: {{ lead?.id }}
+        </div>
+    </mat-card-content>
+    <!-- Row 3 -->
+    <mat-card-content class="row" *ngIf="lead?.status === 'accepted'" style="display: flex; justify-content: space-between;">
+        <div>
+            <i class="fas fa-phone"></i> {{ lead?.contact_phone }}
+        </div>
+        <div>
+            <i class="fas fa-envelope"></i> {{ lead?.contact_email }}
+        </div>
+    </mat-card-content>
+    <!-- Row 4 -->
+    <mat-card-content class="row">
+        <div *ngIf="lead?.status === 'new'" class="status-new">
+            <button mat-button class="accept-button" (click)="acceptLead()">Accept</button>
+            <button mat-button class="decline-button" (click)="declineLead()">Decline</button>
+            <div class="price-invitation">
+                <div>${{ lead?.price }}</div>
+                <div>Lead Invitation</div>
+            </div>
+        </div>
+        <div *ngIf="lead?.status === 'accepted'">{{ lead?.description }}</div>
+    </mat-card-content>
+</mat-card>
