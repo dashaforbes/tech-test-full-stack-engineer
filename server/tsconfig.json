@@ -7,9 +7,13 @@
     "module": "commonjs",
     "sourceMap": true,
     "declaration": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["jest"],
+    "esModuleInterop": true
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./tests/**/*"
   ]
 }
